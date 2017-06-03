@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../theme/bootstrap.css">
+<script src="../theme/jquery.js"></script>
+<script src="../theme/bootstrap.js"></script>
+<title>关于博客</title>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="rows">
+			<div class="col-md-10">
+				<h4>个人博客</h4>
+			</div>
+			<div class="col-md-2">
+				<h5>
+					<a href="register.html">注册</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="login.html">登录</a>
+				</h5>
+			</div>
+		</div>
+	</nav>
+</body>
+</html>
