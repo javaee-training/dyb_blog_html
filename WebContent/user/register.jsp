@@ -41,14 +41,13 @@
 </style>
 </head>
 <body style="text-align: center;">
-	<div class="container">
-		<!-- 导航栏 -->
+ 		<!-- 导航栏 -->
 		<nav class="navbar navbar-default nav">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#">个人博客</a>
 				</div>
-				<a class="nav_href" href="login.html">注册</a> <a class="nav_href" href="register.html">登录</a>
+				<a class="nav_href" href="register.jsp">注册</a> <a class="nav_href" href="login.jsp">登录</a>
 			</div>
 		</nav>
 		<br>
@@ -65,7 +64,7 @@
 						<h3 class="panel-title ">注册您的账户</h3>
 					</div>
 					<div class="panel-body">
-						<form role="form">
+						<form role="form" action="registerAction" method="post">
 							<div class="form-group ">
 								<div class="for_user">
 									<label>账号：</label>
@@ -79,7 +78,7 @@
 								<input type="text" class="form-control" id="password" placeholder="请输入密码">
 							</div>
 							<div class="sub_color in">
-								<input type="button" style="width: 200px; background: url(../images/button.jpg); color: white; margin: 0 auto;" class="btn" value="注册" onclick="checkName()"></input>
+								<input type="submit" style="width: 200px; background: url(../images/button.jpg); color: white; margin: 0 auto;" class="btn" value="注册" onclick="checkName()"></input>
 							</div>
 						</form>
 					</div>
@@ -87,12 +86,11 @@
 			</div>
 			<div class="col-xs-4"></div>
 		</div>
-	</div>
-	<script type="text/javascript">
+ 	<script type="text/javascript">
  function checkName(){
 	 var username_tip = document.getElementById("username_tip");
  	 var checkNameResult = document.getElementById("username").value;
- 		if(checkNameResult.trim().length<8){
+ 		if(checkNameResult.trim().length<6){
 			username_tip.style.visibility="visible";
  			 
 		}else{

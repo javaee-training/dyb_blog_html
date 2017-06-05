@@ -75,16 +75,16 @@
 				<a class="navbar-brand" href="#">${ sessionScope.username }的个人博客</a>
 			</div>
 			<div class=" nav_href fa fa-sign-out">
-				<a style="padding-left: 2px">退出</a>
+				<a href="../info/indicate.jsp?id=2" onclick="return exit()"  style="padding-left: 2px">退出</a>
 			</div>
 			<div class="fa fa-user-o nav_href">
-				<a style="padding-left: 2px">张三</a>
+				<a href="#" style="padding-left: 2px">${ sessionScope.username }</a>
 			</div>
 			<div class=" nav_href fa fa-plus">
-				<a style="padding-left: 2px">标签</a>
+				<a href="#" style="padding-left: 2px">标签</a>
 			</div>
 			<div class=" nav_href fa fa-plus">
-				<a style="padding-left: 2px">文章</a>
+				<a href="#" style="padding-left: 2px">文章</a>
 			</div>
 		</nav>
 		<div class="row">
@@ -110,5 +110,13 @@
 			</div>
 		</div>
 	</div>
+	  <script type="text/javascript">
+ function exit() {
+		if (confirm("确定是否删除此订单？"))
+			return true;
+		else
+			return false;
+	}
+ </script>
 </body>
 </html>

@@ -69,23 +69,24 @@
 </style>
 </head>
 <body>
+
 	<div class="container nav">
 		<!-- 导航栏 -->
 		<nav class="navbar navbar-default ">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">个人博客</a>
+				<a class="navbar-brand" href="#">${ sessionScope.username }的个人博客</a>
 			</div>
 			<div class=" nav_href fa fa-sign-out">
-				<a style="padding-left: 2px">退出</a>
+				<a href="../info/indicate.jsp?id=2" onclick="return exit()" style="padding-left: 2px">退出</a>
 			</div>
 			<div class="fa fa-user-o nav_href">
-				<a style="padding-left: 2px">张三</a>
+				<a href="#" style="padding-left: 2px">${ sessionScope.username }</a>
 			</div>
 			<div class=" nav_href fa fa-plus">
-				<a style="padding-left: 2px">标签</a>
+				<a href="../tag/add.jsp" style="padding-left: 2px">标签</a>
 			</div>
 			<div class=" nav_href fa fa-plus">
-				<a style="padding-left: 2px">文章</a>
+				<a href="view.jsp" style="padding-left: 2px">文章</a>
 			</div>
 		</nav>
 		<div class="panel panel-default">
@@ -115,7 +116,7 @@
 					<br>
 					<br>
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="#">编辑</a></li>
+						<li class="active"><a href="edit.jsp">编辑</a></li>
 						<li><a href="#">预览</a></li>
 					</ul>
 					<textarea class="form-control" rows="20"></textarea>
@@ -126,5 +127,13 @@
 			</div>
 		</div>
 	</div>
+ <script type="text/javascript">
+ function exit() {
+		if (confirm("确定是否删除此订单？"))
+			return true;
+		else
+			return false;
+	}
+ </script>
 </body>
 </html>

@@ -11,10 +11,22 @@
 		case 1 :
 			StrInfo = "未登录！";
 			btn = "danger";
-			nexturl = "../user/login.jsp";
-			nextbtninfo = "去登录";
+			nexturl = request.getContextPath()+"/user/login.jsp";
+ 			nextbtninfo = "去登录";
 			break;
-
+		case 2 :
+			StrInfo = "注销成功！";
+			btn = "success";
+			nexturl = request.getContextPath()+"/user/login.jsp";
+			session.invalidate();
+ 			nextbtninfo = "重新登录";
+			break;
+		case 3 :
+			StrInfo = "注册成功！";
+			btn = "success";
+			nexturl = request.getContextPath()+"/user/login.jsp";
+  			nextbtninfo = "登录";
+			break;
 		default :
 			break;
 	}
@@ -34,8 +46,7 @@
 <script>  
 function myClick()  
 {  
-	window.location.href="<%=nexturl%>
-	";
+	window.location.href=" <%=nexturl%> ";
 	}
 </script>
 </head>

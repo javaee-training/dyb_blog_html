@@ -18,7 +18,7 @@
 			</div>
 			<div class="col-md-2">
 				<h5>
-					<a href="register.html">注册</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="login.html">登录</a>
+					<a href="register.jsp">注册</a>&nbsp; &nbsp; &nbsp; &nbsp; <a href="login.jsp">登录</a>
 				</h5>
 			</div>
 		</div>

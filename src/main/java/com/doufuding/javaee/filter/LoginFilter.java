@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter("/blog/*")
+@WebFilter({"/blog/*","/tag/*"})
 public class LoginFilter implements Filter {
 
     /**
@@ -44,7 +44,7 @@ public class LoginFilter implements Filter {
 		HttpSession session = request.getSession();
 		String username = (String) session.getAttribute("username");
 		if(username==null){
-			request.getRequestDispatcher("/info/indicate.jsp?id=1").forward(request, response);   
+			 request.getRequestDispatcher("/info/indicate.jsp?id=1").forward(request, response);   
 		}
 		
 		chain.doFilter(request, response);

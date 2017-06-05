@@ -47,15 +47,11 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">个人博客</a>
 			</div>
-			<a class="nav_href" href="login.jsp">注册</a> <a class="nav_href"
-				href="register.jsp">登录</a>
+			<a class="nav_href" href="register.jsp">注册</a> <a class="nav_href"
+				href="login.jsp">登录</a>
 		</div>
 	</nav>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+
 	<div class="row">
 		<div class="col-xs-4"></div>
 		<div class="col-xs-4">
@@ -84,7 +80,7 @@
 						<div class="sub_color in">
 							<input type="submit"
 								style="width: 200px; background: url(../images/button.jpg); color: white; margin: 0 auto;"
-								class="btn" value="登录" onclick="checkName()"></input>
+								class="btn" value="登录"  ></input>
 						</div>
 					</form>
 				</div>
@@ -100,6 +96,7 @@
 				username_tip.style.visibility = "visible";
 
 			} else {
+				
 			}
 
 		}

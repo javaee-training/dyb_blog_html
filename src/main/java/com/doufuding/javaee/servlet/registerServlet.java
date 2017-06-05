@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class registerServlet
  */
-@WebServlet("/user/LoginAction")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/registerAction")
+public class registerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public registerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,15 +45,12 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		if(username.equals("dyb1296")&&password.equals("dyb1296")){
-			session.setAttribute("username", username);
-  			String url="/blog/add.jsp";
-			RequestDispatcher rd = sc.getRequestDispatcher(url);
-			rd.forward(request, response);
-			
-		}else{
-			//request.getRequestDispatcher("/user/login.jsp").forward(request, response);
-		}
+		
+		sc.setAttribute("res_username", username);
+		sc.setAttribute("res_password", password);
+		String url="/info/indicate.jsp?id=3";
+		RequestDispatcher rd = sc.getRequestDispatcher(url);
+		rd.forward(request, response);
 	}
 
 }
