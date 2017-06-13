@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<!-- JSTL 核心标签库 -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- JSTL 函数标签库 -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<!-- JSTL 国际化即格式化文本标签 -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +86,7 @@
 						<div class="sub_color in">
 							<input type="submit"
 								style="width: 200px; background: url(../images/button.jpg); color: white; margin: 0 auto;"
-								class="btn" value="登录"  ></input>
+								class="btn" value="登录"></input>
 						</div>
 					</form>
 				</div>
@@ -94,11 +100,8 @@
 			var checkNameResult = document.getElementById("username").value;
 			if (checkNameResult.trim().length < 6) {
 				username_tip.style.visibility = "visible";
-
 			} else {
-				
 			}
-
 		}
 	</script>
 </body>

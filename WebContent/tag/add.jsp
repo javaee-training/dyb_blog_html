@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<!-- JSTL 核心标签库 -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- JSTL 函数标签库 -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<!-- JSTL 国际化即格式化文本标签 -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,19 +80,22 @@
 	<div class="container nav">
 		<nav class="navbar navbar-default ">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">个人博客</a>
+				<a class="navbar-brand" href="#">${ sessionScope.username==null?"":sessionScope.username }${ sessionScope.username==null?"":"的" }个人博客</a>
 			</div>
 			<div class=" nav_href fa fa-sign-out">
-				<a  href="../info/indicate.jsp?id=2" onclick="return exit()" style="padding-left: 2px">退出</a>
+				<a href="../info/indicate.jsp?id=2" onclick="return exit()"
+					style="padding-left: 2px">退出</a>
 			</div>
 			<div class="fa fa-user-o nav_href">
 				<a style="padding-left: 2px">${ sessionScope.username }</a>
 			</div>
 			<div class=" nav_href fa fa-plus">
-				<a style="padding-left: 2px">标签</a>
+				<a href="<%=request.getContextPath()%>/tag/new"
+					style="padding-left: 2px">标签</a>
 			</div>
 			<div class=" nav_href fa fa-plus">
-				<a style="padding-left: 2px">文章</a>
+				<a href="<%=request.getContextPath()%>/blog/new"
+					style="padding-left: 2px">文章</a>
 			</div>
 		</nav>
 		<div class="panel panel-default">
@@ -109,13 +118,14 @@
 			</div>
 		</div>
 	</div>
-	 <script type="text/javascript">
- function exit() {
-		if (confirm("确定是否删除此订单？"))
-			return true;
-		else
-			return false;
-	}
- </script>
+	<script type="text/javascript">
+		function exit() {
+			if (confirm("确定是否退出此博客？"))
+				return true;
+			else
+				return false;
+		}
+	</script>
+
 </body>
 </html>

@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <!-- JSTL 核心标签库 -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- JSTL 函数标签库 -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<!-- JSTL 国际化即格式化文本标签 -->
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +53,16 @@
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#">个人博客</a>
 				</div>
-				<a class="nav_href" href="register.jsp">注册</a> <a class="nav_href" href="login.jsp">登录</a>
+				<c:choose> 
+  <c:when test="${empty session}"> 
+    <a class="nav_href" href="register.jsp">注册</a>
+   </c:when> 
+ 
+  <c:otherwise>   
+  <a class="nav_href" href="login.jsp">登录</a>
+  </c:otherwise> 
+</c:choose> 
+				 
 			</div>
 		</nav>
 		<br>
@@ -69,13 +84,13 @@
 								<div class="for_user">
 									<label>账号：</label>
 								</div>
-								<input type="text" class="form-control" id="username" placeholder="请输入账号">
+								<input type="text" class="form-control" id="username" name="username" placeholder="请输入账号">
 							</div>
 							<div class="form-group">
 								<div class="for_user">
 									<label>密码：</label>
 								</div>
-								<input type="text" class="form-control" id="password" placeholder="请输入密码">
+								<input type="text" class="form-control" id="password" name="password" placeholder="请输入密码">
 							</div>
 							<div class="sub_color in">
 								<input type="submit" style="width: 200px; background: url(../images/button.jpg); color: white; margin: 0 auto;" class="btn" value="注册" onclick="checkName()"></input>

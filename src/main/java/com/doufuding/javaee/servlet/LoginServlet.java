@@ -11,20 +11,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.doufuding.model.UserInfo;
+
 /**
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/user/LoginAction")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public LoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,18 +43,20 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
-		ServletContext sc = getServletContext();
+		ServletContext sc =  this.getServletContext();
 		HttpSession session = request.getSession();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		if(username.equals("dyb1296")&&password.equals("dyb1296")){
+		UserInfo uInfo = (UserInfo) sc.getAttribute("user");
+ 		String reg_username = uInfo.getLoginName();
+ 		String reg_password = uInfo.getPassword();
+ 		if(username.equals(reg_username)&&password.equals(reg_password)){
 			session.setAttribute("username", username);
-  			String url="/blog/add.jsp";
+			String url="/blog/add.jsp";
 			RequestDispatcher rd = sc.getRequestDispatcher(url);
-			rd.forward(request, response);
-			
+			rd.forward(request, response);	
 		}else{
-			//request.getRequestDispatcher("/user/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/user/login.jsp").forward(request, response);
 		}
 	}
 
